@@ -1,0 +1,1 @@
+import{J as a,M as i,X as s,Y as t,N as e}from"./generateCategoricalChart-BzM-bvxi.js";var x=a({chartName:"BarChart",GraphicalChild:i,defaultTooltipEventType:"axis",validateTooltipEventTypes:["axis","item"],axisComponents:[{axisType:"xAxis",AxisComp:s},{axisType:"yAxis",AxisComp:t}],formatAxisMap:e});export{x as B};

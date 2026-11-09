@@ -1,0 +1,643 @@
+/* ═══════════════════════════════════════════════════════
+   Hierarchy Module — Department Org‑Chart Styles
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Page Container ── */
+.hierarchyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* ── Page Header ── */
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ── Department Selector Bar ── */
+.deptSelector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+}
+
+.deptSelectorLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-right: 4px;
+  white-space: nowrap;
+}
+
+/* Individual department pill button */
+.deptPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.deptPill:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-1px);
+}
+
+[data-theme='dark'] .deptPill {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme='dark'] .deptPill:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Active department pill */
+.deptPillActive {
+  background-color: var(--ink) !important;
+  color: #ffffff !important;
+  border-color: var(--ink) !important;
+}
+
+.deptPillActive:hover {
+  transform: translateY(-1px);
+}
+
+[data-theme='dark'] .deptPillActive {
+  background-color: #d9d4f7 !important;
+  color: #15131f !important;
+  border-color: #d9d4f7 !important;
+}
+
+/* ── Department Stats Bar ── */
+.statsBar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 20px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.statValue {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .statsBar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .statsBar {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Tree Container (org chart) ── */
+.treeContainer {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--glass-shadow);
+  padding: 32px 24px;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.treeContainerTitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+/* ── Tree Level (one row of the hierarchy) ── */
+.treeLevel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+/* ── Level Label ── */
+.treeLevelLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--lavender);
+  color: var(--ink);
+  margin-bottom: 16px;
+  white-space: nowrap;
+}
+
+[data-theme='dark'] .treeLevelLabel {
+  background: rgba(217, 212, 247, 0.15);
+}
+
+/* ── Node Row (horizontal group of cards in a level) ── */
+.nodeRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+
+/* ── Individual Faculty Node ── */
+.treeNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* ── Card ── */
+.treeNodeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 24px;
+  border-radius: var(--radius-lg);
+  background: var(--panel);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 16px rgba(60, 50, 100, 0.06);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  min-width: 180px;
+  max-width: 220px;
+  text-align: center;
+  position: relative;
+}
+
+.treeNodeCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(60, 50, 100, 0.12);
+  border-color: var(--lavender);
+}
+
+[data-theme='dark'] .treeNodeCard {
+  background: var(--panel);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .treeNodeCard:hover {
+  border-color: rgba(217, 212, 247, 0.3);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+/* HOD card highlight */
+.treeNodeCardHOD {
+  border-color: var(--chart-purple);
+  background: linear-gradient(135deg, rgba(217, 212, 247, 0.3) 0%, var(--panel) 100%);
+}
+
+[data-theme='dark'] .treeNodeCardHOD {
+  background: linear-gradient(135deg, rgba(143, 132, 232, 0.15) 0%, var(--panel) 100%);
+  border-color: rgba(143, 132, 232, 0.4);
+}
+
+/* ── Node Avatar ── */
+.nodeAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #15131f;
+  flex-shrink: 0;
+}
+
+/* ── Node Info ── */
+.nodeName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.nodeDesignation {
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.3;
+}
+
+.nodeFacultyId {
+  font-size: 11px;
+  color: var(--ink-soft);
+  opacity: 0.7;
+  font-family: monospace;
+}
+
+.nodeSpecialization {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--field);
+  color: var(--ink);
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme='dark'] .nodeSpecialization {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nodeContact {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+.nodeContact svg {
+  flex-shrink: 0;
+}
+
+/* ── Connector Lines Between Levels ── */
+.connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.connectorVertical {
+  width: 2px;
+  height: 32px;
+  background: var(--lavender);
+  border-radius: 1px;
+}
+
+[data-theme='dark'] .connectorVertical {
+  background: rgba(217, 212, 247, 0.25);
+}
+
+.connectorHorizontal {
+  height: 2px;
+  background: var(--lavender);
+  border-radius: 1px;
+  align-self: stretch;
+  margin: 0 40px;
+}
+
+[data-theme='dark'] .connectorHorizontal {
+  background: rgba(217, 212, 247, 0.25);
+}
+
+/* Connector node with spread lines */
+.connectorSpread {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.connectorSpread::before {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 16px;
+  background: var(--lavender);
+  border-radius: 1px;
+}
+
+[data-theme='dark'] .connectorSpread::before {
+  background: rgba(217, 212, 247, 0.25);
+}
+
+.connectorSpreadBar {
+  height: 2px;
+  background: var(--lavender);
+  border-radius: 1px;
+  align-self: center;
+}
+
+[data-theme='dark'] .connectorSpreadBar {
+  background: rgba(217, 212, 247, 0.25);
+}
+
+.connectorDrops {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.connectorDrop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+  min-width: 180px;
+  max-width: 220px;
+}
+
+.connectorDrop::before {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 16px;
+  background: var(--lavender);
+  border-radius: 1px;
+}
+
+[data-theme='dark'] .connectorDrop::before {
+  background: rgba(217, 212, 247, 0.25);
+}
+
+/* ── Profile Panel (Modal content) ── */
+.profilePanel {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profileAvatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #15131f;
+  flex-shrink: 0;
+}
+
+.profileHeaderInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profileName {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.profileDesignation {
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.profileDept {
+  font-size: 13px;
+  color: var(--chart-purple);
+  font-weight: 500;
+}
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.profileField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profileFieldLabel {
+  font-size: 12px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profileFieldValue {
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.profileSpecChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--field);
+  color: var(--ink);
+}
+
+[data-theme='dark'] .profileSpecChip {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 760px) {
+  .profileGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Empty Hierarchy ── */
+.emptyHierarchy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 64px 24px;
+  text-align: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--glass-shadow);
+}
+
+/* ── Management Bar ── */
+.managementBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 18px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+}
+
+.managementBarInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.managementBarDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34c759;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .treeContainer {
+    padding: 24px 16px;
+  }
+
+  .treeNodeCard {
+    min-width: 160px;
+    padding: 16px 18px;
+  }
+
+  .nodeRow {
+    gap: 12px;
+  }
+
+  .deptSelector {
+    padding: 8px 12px;
+  }
+}
+
+/* Mobile — tree becomes vertical list */
+@media (max-width: 760px) {
+  .pageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .deptSelector {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .deptSelector::-webkit-scrollbar {
+    display: none;
+  }
+
+  .treeContainer {
+    padding: 20px 12px;
+  }
+
+  .nodeRow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .treeNodeCard {
+    min-width: auto;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .connectorSpreadBar {
+    display: none;
+  }
+
+  .connectorDrops {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .connectorDrop {
+    min-width: auto;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .managementBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

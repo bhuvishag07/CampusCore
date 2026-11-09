@@ -1,0 +1,6 @@
+import{c as t,j as e,L as r}from"./index-C0-exFzl.js";import{A as n}from"./arrow-left-uRqY7ddp.js";/**
+ * @license lucide-react v0.359.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const i=t("CircleHelp",[["circle",{cx:"12",cy:"12",r:"10",key:"1mglay"}],["path",{d:"M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3",key:"1u773s"}],["path",{d:"M12 17h.01",key:"p32p05"}]]),a=()=>e.jsxs("div",{style:{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",minHeight:"60vh",textAlign:"center",padding:24},children:[e.jsx("div",{style:{width:64,height:64,borderRadius:20,backgroundColor:"var(--lavender)",color:"var(--ink)",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16},children:e.jsx(i,{size:32})}),e.jsx("h1",{style:{fontSize:36,fontWeight:500},children:"404 - Page Not Found"}),e.jsx("p",{style:{color:"var(--ink-soft)",marginTop:8,marginBottom:24,maxWidth:420},children:"The requested page does not exist or has been relocated in the academic portal."}),e.jsxs(r,{to:"/",className:"btn-dark",children:[e.jsx(n,{size:16}),e.jsx("span",{children:"Return to Dashboard"})]})]});export{a as NotFoundPage};

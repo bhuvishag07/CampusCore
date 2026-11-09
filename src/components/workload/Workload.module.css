@@ -1,0 +1,465 @@
+/* ═══════════════════════════════════════════════════════════════
+   Workload Module — Faculty Workload Management Styles
+   Uses CampusCore design-system CSS variables throughout.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Stats Grid ─────────────────────────────────────────────── */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Stat Card ──────────────────────────────────────────────── */
+.statCard {
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: default;
+}
+
+.statCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(60, 50, 100, 0.08);
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.statIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ─── Filter Bar ─────────────────────────────────────────────── */
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filterBar select {
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: var(--radius-pill);
+  background-color: var(--field);
+  color: var(--ink);
+  border: 1px solid var(--glass-border);
+  min-width: 150px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filterBar select:focus {
+  background-color: var(--panel);
+  border-color: var(--ink);
+}
+
+.filterLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+/* ─── Table Container ────────────────────────────────────────── */
+.tableContainer {
+  padding: 24px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+
+/* ─── Table ──────────────────────────────────────────────────── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tableHead {
+  background-color: var(--field);
+}
+
+.tableHead th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  border: none;
+}
+
+.tableHead th:first-child {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+.tableHead th:last-child {
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.tableRow {
+  transition: background-color var(--transition-fast);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.tableRow:hover {
+  background-color: rgba(217, 212, 247, 0.12);
+}
+
+[data-theme='dark'] .tableRow {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme='dark'] .tableRow:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.tableCell {
+  padding: 14px 16px;
+  vertical-align: middle;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.tableCellWrap {
+  padding: 14px 16px;
+  vertical-align: middle;
+  color: var(--ink);
+  white-space: normal;
+  max-width: 220px;
+}
+
+/* ─── Status Pill ────────────────────────────────────────────── */
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.statusNormal {
+  background-color: rgba(52, 199, 89, 0.14);
+  color: #2d9f4e;
+}
+
+.statusOverloaded {
+  background-color: rgba(179, 38, 30, 0.12);
+  color: var(--danger);
+}
+
+.statusUnderutilized {
+  background-color: rgba(255, 179, 64, 0.16);
+  color: #b8860b;
+}
+
+[data-theme='dark'] .statusNormal {
+  background-color: rgba(52, 199, 89, 0.18);
+  color: #6ee29c;
+}
+
+[data-theme='dark'] .statusOverloaded {
+  background-color: rgba(255, 107, 107, 0.18);
+  color: #ff8a8a;
+}
+
+[data-theme='dark'] .statusUnderutilized {
+  background-color: rgba(255, 179, 64, 0.18);
+  color: #f5c862;
+}
+
+/* ─── Responsibility Chip ────────────────────────────────────── */
+.responsibilityChipWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.responsibilityChip {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 500;
+  background-color: var(--field);
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+[data-theme='dark'] .responsibilityChip {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Action Buttons ─────────────────────────────────────────── */
+.actionGroup {
+  display: flex;
+  gap: 6px;
+}
+
+.iconBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--field);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.iconBtn:hover {
+  background: var(--lavender);
+  color: var(--ink);
+}
+
+.iconBtnDanger:hover {
+  background: rgba(179, 38, 30, 0.12);
+  color: var(--danger);
+}
+
+[data-theme='dark'] .iconBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--ink);
+}
+
+[data-theme='dark'] .iconBtnDanger:hover {
+  background: rgba(255, 107, 107, 0.18);
+  color: #ff8a8a;
+}
+
+/* ─── Chart Container ────────────────────────────────────────── */
+.chartContainer {
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.chartHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.chartLegend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.legendDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+/* ─── Form Styles (Modal) ────────────────────────────────────── */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.formLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.formHint {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+.formRow {
+  display: flex;
+  gap: 16px;
+}
+
+@media (max-width: 760px) {
+  .formRow {
+    flex-direction: column;
+  }
+}
+
+.formRow > .formGroup {
+  flex: 1;
+}
+
+.formInput {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  background-color: var(--field);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.formInput:focus {
+  background-color: var(--panel);
+  border-color: var(--ink);
+}
+
+.formSelect {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  background-color: var(--field);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  cursor: pointer;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.formSelect:focus {
+  background-color: var(--panel);
+  border-color: var(--ink);
+}
+
+/* ─── Course Checkboxes ──────────────────────────────────────── */
+.courseCheckboxGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 8px;
+  background: var(--field);
+  border-radius: var(--radius-md);
+}
+
+.courseCheckboxItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink);
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.courseCheckboxItem:hover {
+  background: rgba(217, 212, 247, 0.2);
+}
+
+.courseCheckboxItem input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--chart-purple);
+  cursor: pointer;
+}
+
+/* ─── Status Preview in Form ─────────────────────────────────── */
+.statusPreview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+/* ─── Form Actions ───────────────────────────────────────────── */
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--glass-border);
+}
+
+/* ─── Page Header ────────────────────────────────────────────── */
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pageHeaderLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── No Match Message ───────────────────────────────────────── */
+.noMatchRow td {
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+/* ─── Section Title ──────────────────────────────────────────── */
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}

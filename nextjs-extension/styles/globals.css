@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap");
+
+:root {
+  --ink: #15131f;
+  --ink-soft: #5d5a72;
+  --bg: #e9e7fb;
+  --panel: #ffffff;
+  --field: #f3f2fa;
+  --lavender: #d9d4f7;
+  --blue: #d3e4fa;
+  --green: #d5f0d2;
+  --danger: #b3261e;
+  --chart-purple: #8f84e8;
+  --chart-blue: #7fb2ee;
+  --chart-pink: #f2a7c3;
+  --soft-pink: #f6dce8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(60, 50, 100, 0.06);
+}
+
+.dept-card {
+  border-radius: 20px;
+  padding: 20px;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.dept-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(60, 50, 100, 0.1);
+}
+
+.tone-0 {
+  background-color: var(--lavender);
+}
+
+.tone-1 {
+  background-color: var(--blue);
+}
+
+.tone-2 {
+  background-color: var(--green);
+}
+
+.btn-dark {
+  background-color: var(--ink);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}

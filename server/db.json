@@ -1,0 +1,73 @@
+{
+  "departments": [
+    {
+      "id": "dept-1",
+      "code": "CSE",
+      "name": "Computer Science & Engineering",
+      "hod": "Dr. Arvind Ramanathan",
+      "description": "Premier department specializing in algorithms, system software, cloud architectures, and machine intelligence.",
+      "establishedYear": 2004,
+      "email": "hod.cse@collegehub.edu",
+      "contactNumber": "+1 (555) 019-2831",
+      "status": "Active"
+    },
+    {
+      "id": "dept-2",
+      "code": "AIDS",
+      "name": "Artificial Intelligence & Data Science",
+      "hod": "Dr. Priya Sundaram",
+      "description": "Center for deep learning, NLP, computer vision, data pipelines, and applied robotics research.",
+      "establishedYear": 2020,
+      "email": "hod.aids@collegehub.edu",
+      "contactNumber": "+1 (555) 019-4920",
+      "status": "Active"
+    },
+    {
+      "id": "dept-3",
+      "code": "IT",
+      "name": "Information Technology",
+      "hod": "Dr. Rajesh Kumar",
+      "description": "Focused on enterprise networks, cybersecurity, distributed computing, and web engineering.",
+      "establishedYear": 2008,
+      "email": "hod.it@collegehub.edu",
+      "contactNumber": "+1 (555) 019-5832",
+      "status": "Active"
+    },
+    {
+      "id": "dept-4",
+      "code": "ECE",
+      "name": "Electronics & Communication",
+      "hod": "Dr. Meenakshi Iyer",
+      "description": "VLSI chip design, embedded IoT architectures, wireless communications, and signal processing.",
+      "establishedYear": 2001,
+      "email": "hod.ece@collegehub.edu",
+      "contactNumber": "+1 (555) 019-7411",
+      "status": "Active"
+    },
+    {
+      "id": "dept-5",
+      "code": "ME",
+      "name": "Mechanical Engineering",
+      "hod": "Dr. Vikram Malhotra",
+      "description": "Thermal systems, computer-aided design, robotics, additive manufacturing, and thermodynamics.",
+      "establishedYear": 1998,
+      "email": "hod.me@collegehub.edu",
+      "contactNumber": "+1 (555) 019-8904",
+      "status": "Active"
+    },
+    {
+      "id": "dept-6",
+      "code": "CE",
+      "name": "Civil Engineering",
+      "hod": "Dr. Suresh Varma",
+      "description": "Structural integrity, environmental hydrology, sustainable urban planning, and geotechnical studies.",
+      "establishedYear": 1995,
+      "email": "hod.ce@collegehub.edu",
+      "contactNumber": "+1 (555) 019-6120",
+      "status": "Active"
+    }
+  ],
+  "faculty": [],
+  "students": [],
+  "courses": []
+}

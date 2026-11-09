@@ -1,0 +1,1 @@
+import{j as r,P as s}from"./index-C0-exFzl.js";import{S as a}from"./styledComponents-qOqbt0nM.js";const o=({status:t="Active",className:e=""})=>r.jsx(a,{$status:t,className:e,children:t});o.propTypes={status:s.oneOf(["Active","Inactive","Enrolled","On leave","Graduated"]),className:s.string};export{o as S};

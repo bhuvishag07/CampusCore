@@ -1,0 +1,281 @@
+.dashboardGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Welcome section */
+.welcomeSection {
+  margin-bottom: 6px;
+}
+
+.dateSubtitle {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+/* Stats Row */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .statsRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .statsRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statCard {
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: default;
+}
+
+.statCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(60, 50, 100, 0.08);
+}
+
+.statValue {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-top: 4px;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+/* Main Dashboard layout: Left column + Right column */
+.mainLayoutGrid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .mainLayoutGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Left Departments column */
+.departmentsPanel {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  background: var(--field);
+  border-radius: var(--radius-pill);
+  padding: 4px 6px 4px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+}
+
+.searchBox input {
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  color: var(--ink);
+  width: 100%;
+  padding: 4px;
+  outline: none;
+}
+
+.searchSubmitBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+[data-theme='dark'] .searchSubmitBtn {
+  background: #f1effb;
+  color: #15131f;
+}
+
+.cardStack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Right Side: Top chart + Bottom 2 panels */
+.rightArea {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chartPanel {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chartHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chartLegend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin: 12px 0 16px;
+}
+
+.legendDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+/* Weekly progress strip beneath x-axis matching screenshot */
+.progressStrip {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 0 20px;
+}
+
+.progressSegment {
+  flex: 1;
+  height: 5px;
+  border-radius: 999px;
+  background-color: #e5e3f5;
+  transition: background-color var(--transition-fast);
+}
+
+.progressSegmentActive {
+  background-color: #34c759;
+}
+
+/* Bottom Split: Recent Activity + Top Departments */
+.bottomPanelsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 850px) {
+  .bottomPanelsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.activityRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.45);
+  transition: all var(--transition-fast);
+}
+
+.activityRow:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateX(2px);
+}
+
+[data-theme='dark'] .activityRow {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] .activityRow:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* Top Departments Leaderboard Rows */
+.leaderboardRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.leaderboardRow:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme='dark'] .leaderboardRow:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.leaderboardScore {
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.circularExpandBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--field);
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.circularExpandBtn:hover {
+  background: var(--ink);
+  color: #ffffff;
+}

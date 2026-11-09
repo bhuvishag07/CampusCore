@@ -1,0 +1,1 @@
+import{j as r,P as e}from"./index-C0-exFzl.js";import{D as t}from"./styledComponents-qOqbt0nM.js";const p=({icon:s,size:i=36,iconSize:n=18,className:o=""})=>r.jsx(t,{style:{width:i,height:i},className:o,"aria-hidden":"true",children:r.jsx(s,{size:n})});p.propTypes={icon:e.elementType.isRequired,size:e.number,iconSize:e.number,className:e.string};export{p as I};

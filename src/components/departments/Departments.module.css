@@ -1,0 +1,153 @@
+.deptContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.twoColumnLayout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .twoColumnLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Left Form Panel */
+.formPanel {
+  background: var(--panel);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 20px rgba(60, 50, 100, 0.05);
+}
+
+.formHeader {
+  margin-bottom: 20px;
+}
+
+.formTitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.formSubtitle {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.label {
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.inputField {
+  background-color: var(--field);
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--ink);
+  transition: all var(--transition-fast);
+  width: 100%;
+}
+
+.inputField:focus {
+  background-color: var(--panel);
+  border-color: var(--ink);
+}
+
+.inputError {
+  border-color: var(--danger) !important;
+}
+
+.errorMessage {
+  font-size: 11px;
+  color: var(--danger);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.collapsibleToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+  margin: 6px 0 12px;
+  border-top: 1px dashed rgba(93, 90, 114, 0.2);
+}
+
+/* Right Grid Area */
+.rightGridArea {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filterBar {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.countPill {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+[data-theme='dark'] .countPill {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--ink);
+}
+
+/* Detail page hero */
+.detailHero {
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}

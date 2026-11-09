@@ -1,0 +1,355 @@
+/* ═══════════════════════════════════════════════════════
+   Meetings Module — Department Meetings & Action Items Styles
+   ═══════════════════════════════════════════════════════ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ── Stats Grid ── */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statCard {
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: default;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+.statIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Filter Bar ── */
+.filterBar {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filterSelect {
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: var(--radius-pill);
+  background-color: var(--field);
+  color: var(--ink);
+  border: 1px solid var(--glass-border);
+  outline: none;
+  cursor: pointer;
+}
+
+.searchInput {
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: var(--radius-pill);
+  background-color: var(--field);
+  color: var(--ink);
+  border: 1px solid var(--glass-border);
+  outline: none;
+  min-width: 200px;
+}
+
+/* ── Meetings Grid ── */
+.meetingsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.meetingCard {
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: pointer;
+}
+
+.meetingCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(60, 50, 100, 0.12);
+}
+
+.meetingCardTop {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meetingCardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.meetingTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.statusUpcoming {
+  background: rgba(127, 178, 238, 0.2);
+  color: #2b70c9;
+}
+
+[data-theme='dark'] .statusUpcoming {
+  color: #8ac0ff;
+}
+
+.statusCompleted {
+  background: rgba(52, 199, 89, 0.16);
+  color: #248a3d;
+}
+
+[data-theme='dark'] .statusCompleted {
+  color: #5ce383;
+}
+
+.statusCancelled {
+  background: rgba(179, 38, 30, 0.14);
+  color: var(--danger);
+}
+
+.meetingMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.meetingMetaRow svg {
+  flex-shrink: 0;
+}
+
+.meetingCardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid rgba(217, 212, 247, 0.3);
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+/* ── Detail Page Styles ── */
+.detailHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+}
+
+.detailTitleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .metaGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.metaCard {
+  background: var(--field);
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tabBar {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 2px;
+  margin-bottom: 20px;
+}
+
+.tabItem {
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tabItemActive {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+[data-theme='dark'] .tabItemActive {
+  background: #d9d4f7;
+  color: #15131f;
+}
+
+/* ── Action Items ── */
+.actionItemCard {
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: var(--panel);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.priorityHigh {
+  background: rgba(179, 38, 30, 0.12);
+  color: var(--danger);
+}
+
+.priorityMedium {
+  background: rgba(245, 166, 35, 0.16);
+  color: #b37400;
+}
+
+.priorityLow {
+  background: rgba(52, 199, 89, 0.14);
+  color: #248a3d;
+}
+
+.overdueBadge {
+  background: rgba(179, 38, 30, 0.16);
+  color: var(--danger);
+  font-weight: 600;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+/* ── Forms ── */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.formLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.formInput, .formTextarea, .formSelectInput {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  background-color: var(--field);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  outline: none;
+}
+
+.formInput:focus, .formTextarea:focus, .formSelectInput:focus {
+  border-color: var(--ink);
+}
+
+.formRow {
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .formRow {
+    flex-direction: column;
+  }
+}
